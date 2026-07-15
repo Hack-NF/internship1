@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enterprise Dashboard</title>
+
+  <link rel="stylesheet" href="../output.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+
+<body class="bg-gray-100 min-h-screen">
+
+  <!-- ===================== TOP HEADER ===================== -->
+  <header class="top-header">
+    <div class="flex items-center gap-3">
+      <img src="images/logo.png" alt="Logo" class="w-8 h-8 rounded">
+    </div>
+    <div class="flex items-center gap-3">
+      <button class="header-btn bg-sky-500 text-white">
+        <i class="bi bi-geo-alt"></i>
+      </button>
+      <span class="text-xs text-gray-700 font-semibold">Web Team</span>
+      <span class="text-xs text-gray-500">- Non HQO -</span>
+      <span class="text-xs font-bold text-gray-700">(EDT)</span>
+    </div>
+    <div class="flex items-center gap-3">
+      <button class="header-btn bg-sky-500 text-white">
+        <i class="bi bi-person"></i>
+      </button>
+      <i class="bi bi-geo-alt text-gray-500"></i>
+      <i class="bi bi-link-45deg text-gray-500"></i>
+      <i class="bi bi-grid text-gray-500"></i>
+      <i class="bi bi-envelope text-gray-500"></i>
+      <div class="relative">
+        <i class="bi bi-bell text-gray-500 text-lg"></i>
+        <span class="notification-badge">10</span>
+      </div>
+      <i class="bi bi-arrow-clockwise text-gray-500"></i>
+      <img src="images/user.jpg" class="w-8 h-8 rounded-full object-cover" alt="User">
+    </div>
+  </header>
+
+  <!-- ===================== SECOND TOOLBAR ===================== -->
+  <div class="second-toolbar">
+    <div class="flex items-center gap-5">
+      <button class="text-gray-600 hover-text-blue-600 transition-colors">
+        <i class="bi bi-list text-xl"></i>
+      </button>
+      <button class="text-gray-600 hover-text-blue-600 transition-colors">
+        <i class="bi bi-grid text-lg"></i>
+      </button>
+      <button class="text-gray-600 hover-text-blue-600 transition-colors">
+        <i class="bi bi-list-ul text-lg"></i>
+      </button>
+    </div>
+    <div class="w-[350px]">
+      <select class="toolbar-select">
+        <option>Select...</option>
+      </select>
+    </div>
+    <div>
+      <img src="images/microsoft.png" alt="Microsoft" class="h-10">
+    </div>
+  </div>
+
+  <!-- ===================== SIDEBAR + MAIN LAYOUT ===================== -->
+  <div class="flex">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <ul class="sidebar-menu">
+        <li class="active" data-tooltip="Dashboard"><i class="bi bi-house"></i></li>
+        <li data-tooltip="Analytics"><i class="bi bi-graph-up"></i></li>
+        <li data-tooltip="People"><i class="bi bi-people"></i></li>
+        <li data-tooltip="Reports"><i class="bi bi-clipboard-data"></i></li>
+        <li data-tooltip="Inventory"><i class="bi bi-box"></i></li>
+        <li data-tooltip="Global"><i class="bi bi-globe"></i></li>
+        <li data-tooltip="Calendar"><i class="bi bi-calendar3"></i></li>
+        <li data-tooltip="Messages"><i class="bi bi-envelope"></i></li>
+        <li data-tooltip="Buildings"><i class="bi bi-building"></i></li>
+        <li data-tooltip="Settings"><i class="bi bi-gear"></i></li>
+      </ul>
+    </aside>
+  </div>  
+    <!-- Main Content -->
+    <main class="main-content">
+
+      <!-- ========== HERO SECTION ========== -->
+      <section class="dashboard-hero">
+        <!-- Left Card -->
+        <div class="hero-left">
+          <div class="hero-card">
+            <div class="hero-card-image">
+              <img src="images/building.png" alt="Building" class="hero-img" id="buildingImage">
+              <div class="hero-img-placeholder" id="buildingPlaceholder">
+                <i class="bi bi-building"></i>
+              </div>
+              <span class="federated-badge">Federated View</span>
+            </div>
+            <div class="hero-filters">
+              <div class="hero-filter-item">
+                <label class="filter-label">Region</label>
+                <select class="filter-select">
+                  <option value="">Select...</option>
+                  <option value="north">North America</option>
+                  <option value="south">South America</option>
+                  <option value="europe">Europe</option>
+                  <option value="asia">Asia Pacific</option>
+                  <option value="africa">Africa</option>
+                </select>
+              </div>
+              <div class="hero-filter-item">
+                <label class="filter-label">Sites</label>
+                <select class="filter-select">
+                  <option value="">Select...</option>
+                  <option value="hq">Headquarters</option>
+                  <option value="branch1">Branch Office 1</option>
+                  <option value="branch2">Branch Office 2</option>
+                  <option value="datacenter">Data Center</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Right Empty Area -->
+        <div class="hero-right">
+          <div class="hero-empty">
+            <i class="bi bi-grid-3x3-gap"></i>
+            <span>Widgets & charts will appear here</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== NAVIGATION TABS BAR ========== -->
+      <nav class="nav-tabs-bar">
+        <button class="nav-tab active" data-tab="identities">
+          <i class="bi bi-people-fill tab-icon"></i>ALL IDENTITIES
+        </button>
+        <button class="nav-tab" data-tab="visitors">
+          <i class="bi bi-person-badge tab-icon"></i>VISITORS
+        </button>
+        <button class="nav-tab" data-tab="contractors">
+          <i class="bi bi-person-workspace tab-icon"></i>CONTRACTORS
+        </button>
+        <button class="nav-tab" data-tab="employees">
+          <i class="bi bi-person-check tab-icon"></i>EMPLOYEES
+        </button>
+        <button class="nav-tab" data-tab="spaces">
+          <i class="bi bi-door-open tab-icon"></i>SPACES
+        </button>
+        <button class="nav-tab" data-tab="audits">
+          <i class="bi bi-journal-check tab-icon"></i>ACCESS AUDITS
+        </button>
+        <button class="nav-tab" data-tab="occupancy">
+          <i class="bi bi-building-exclamation tab-icon"></i>BUILDING OCCUPANCY
+        </button>
+        <button class="nav-tab" data-tab="reports">
+          <i class="bi bi-file-earmark-bar-graph tab-icon"></i>REPORTS
+        </button>
+      </nav>
+
+      <!-- ========== SUMMARY CARDS ROW ========== -->
+      <section class="summary-cards">
+        <div class="summary-card">
+          <div class="card-icon card-icon-blue">
+            <i class="bi bi-people"></i>
+          </div>
+          <div class="card-info">
+            <span class="card-number">123,563</span>
+            <span class="card-subtitle">Total Profiles</span>
+          </div>
+        </div>
+        <div class="summary-card">
+          <div class="card-icon card-icon-green">
+            <i class="bi bi-person-check"></i>
+          </div>
+          <div class="card-info">
+            <span class="card-number">84,210</span>
+            <span class="card-subtitle">Active Employees</span>
+          </div>
+        </div>
+        <div class="summary-card">
+          <div class="card-icon card-icon-orange">
+            <i class="bi bi-person-badge"></i>
+          </div>
+          <div class="card-info">
+            <span class="card-number">12,847</span>
+            <span class="card-subtitle">Visitors Today</span>
+          </div>
+        </div>
+        <div class="summary-card">
+          <div class="card-icon card-icon-purple">
+            <i class="bi bi-person-workspace"></i>
+          </div>
+          <div class="card-info">
+            <span class="card-number">5,320</span>
+            <span class="card-subtitle">Contractors</span>
+          </div>
+        </div>
+        <div class="summary-card">
+          <div class="card-icon card-icon-teal">
+            <i class="bi bi-door-open"></i>
+          </div>
+          <div class="card-info">
+            <span class="card-number">1,245</span>
+            <span class="card-subtitle">Access Points</span>
+          </div>
+        </div>
+        <div class="summary-card">
+          <div class="card-icon card-icon-red">
+            <i class="bi bi-building"></i>
+          </div>
+          <div class="card-info">
+            <span class="card-number">342</span>
+            <span class="card-subtitle">Total Buildings</span>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
