@@ -1,0 +1,111 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+  background: #f5f6fa;
+}
+
+/* ==========================================
+   ANALYTICS SECTION
+   ========================================== */
+.analytics-section {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ==========================================
+   GRID ROWS
+   ========================================== */
+.analytics-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.row-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.row-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* ==========================================
+   CARD
+   ========================================== */
+.analytics-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.card-header h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.card-range {
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+/* ==========================================
+   CARD FILTER
+   ========================================== */
+.card-filter {
+  display: flex;
+  gap: 10px;
+  font-size: 10px;
+  color: #9ca3af;
+}
+
+.card-filter .active {
+  color: #2196f3;
+  font-weight: 700;
+}
+
+/* ==========================================
+   CHART CONTAINER
+   ========================================== */
+.chart-container {
+  flex: 1;
+  position: relative;
+}
+
+.chart-container canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+@media (max-width: 1024px) {
+  .row-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .row-3,
+  .row-2 {
+    grid-template-columns: 1fr;
+  }
+}

@@ -5,9 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Enterprise Dashboard</title>
 
-  <link rel="stylesheet" href="../output.css">
+  <link rel="stylesheet" href="../css/output.css">
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/style1.css">
   <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+
+  
 </head>
 
 <body class="bg-gray-100 min-h-screen">
@@ -15,7 +18,7 @@
   <!-- ===================== TOP HEADER ===================== -->
   <header class="top-header">
     <div class="flex items-center gap-3">
-      <img src="images/logo.png" alt="Logo" class="w-8 h-8 rounded">
+      <img src="../images/cleancode.png" alt="Logo" class="w-8 h-8 rounded">
     </div>
     <div class="flex items-center gap-3">
       <button class="header-btn bg-sky-500 text-white">
@@ -38,7 +41,7 @@
         <span class="notification-badge">10</span>
       </div>
       <i class="bi bi-arrow-clockwise text-gray-500"></i>
-      <img src="images/user.jpg" class="w-8 h-8 rounded-full object-cover" alt="User">
+      <img src="../images/user.jpg" class="w-8 h-8 rounded-full object-cover" alt="User">
     </div>
   </header>
 
@@ -60,13 +63,14 @@
         <option>Select...</option>
       </select>
     </div>
-    <div>
-      <img src="images/microsoft.png" alt="Microsoft" class="h-10">
+    <div style="display:flex; align-items:center; gap:6px;">
+      <img src="../images/micro.png" alt="Microsoft" class="h-10">
+      <span style="font-weight:700; font-size:14px; color:#374151;">Microsoft</span>
     </div>
   </div>
 
   <!-- ===================== SIDEBAR + MAIN LAYOUT ===================== -->
-  <div class="flex">
+  <div class="flex-wrapper">
 
     <!-- Sidebar -->
     <aside class="sidebar">
@@ -75,91 +79,60 @@
         <li data-tooltip="Analytics"><i class="bi bi-graph-up"></i></li>
         <li data-tooltip="People"><i class="bi bi-people"></i></li>
         <li data-tooltip="Reports"><i class="bi bi-clipboard-data"></i></li>
-        <li data-tooltip="Inventory"><i class="bi bi-box"></i></li>
+        <li data-tooltip="Inventory"><i class="bi bi-box-seam"></i></li>
         <li data-tooltip="Global"><i class="bi bi-globe"></i></li>
         <li data-tooltip="Calendar"><i class="bi bi-calendar3"></i></li>
         <li data-tooltip="Messages"><i class="bi bi-envelope"></i></li>
         <li data-tooltip="Buildings"><i class="bi bi-building"></i></li>
+        <li data-tooltip="Database"><i class="bi bi-database"></i></li>
+        <li data-tooltip="Security"><i class="bi bi-shield-lock"></i></li>
+        <li data-tooltip="Card List"><i class="bi bi-card-list"></i></li>
+        <li data-tooltip="Files"><i class="bi bi-file-earmark-text"></i></li>
+        <li data-tooltip="Bar Chart"><i class="bi bi-bar-chart"></i></li>
         <li data-tooltip="Settings"><i class="bi bi-gear"></i></li>
       </ul>
     </aside>
-  </div>  
+
     <!-- Main Content -->
     <main class="main-content">
 
       <!-- ========== HERO SECTION ========== -->
-      <section class="dashboard-hero">
-        <!-- Left Card -->
+      <section class="hero-section">
         <div class="hero-left">
-          <div class="hero-card">
-            <div class="hero-card-image">
-              <img src="images/building.png" alt="Building" class="hero-img" id="buildingImage">
-              <div class="hero-img-placeholder" id="buildingPlaceholder">
-                <i class="bi bi-building"></i>
-              </div>
-              <span class="federated-badge">Federated View</span>
+          <div class="building-card">
+            <div class="image-wrapper">
+              <img src="../images/building.png" class="building-img">
+              <span class="badge-federated">Federated View</span>
             </div>
-            <div class="hero-filters">
-              <div class="hero-filter-item">
-                <label class="filter-label">Region</label>
-                <select class="filter-select">
-                  <option value="">Select...</option>
-                  <option value="north">North America</option>
-                  <option value="south">South America</option>
-                  <option value="europe">Europe</option>
-                  <option value="asia">Asia Pacific</option>
-                  <option value="africa">Africa</option>
+            <div class="filters">
+              <div class="filter-box">
+                <label>5 Region</label>
+                <select>
+                  <option>Select...</option>
                 </select>
               </div>
-              <div class="hero-filter-item">
-                <label class="filter-label">Sites</label>
-                <select class="filter-select">
-                  <option value="">Select...</option>
-                  <option value="hq">Headquarters</option>
-                  <option value="branch1">Branch Office 1</option>
-                  <option value="branch2">Branch Office 2</option>
-                  <option value="datacenter">Data Center</option>
+              <div class="filter-box">
+                <label>5 Sites</label>
+                <select>
+                  <option>Select...</option>
                 </select>
               </div>
             </div>
           </div>
         </div>
-        <!-- Right Empty Area -->
         <div class="hero-right">
-          <div class="hero-empty">
-            <i class="bi bi-grid-3x3-gap"></i>
-            <span>Widgets & charts will appear here</span>
-          </div>
+          <section class="tabs-section">
+            <button>ALL IDENTITIES</button>
+            <button>VISITORS</button>
+            <button>CONTRACTORS</button>
+            <button>EMPLOYEES</button>
+            <button>SPACES</button>
+            <button>ACCESS AUDITS</button>
+            <button>BUILDING OCCUPANCY</button>
+            <button>REPORTS</button>
+          </section>
         </div>
       </section>
-
-      <!-- ========== NAVIGATION TABS BAR ========== -->
-      <nav class="nav-tabs-bar">
-        <button class="nav-tab active" data-tab="identities">
-          <i class="bi bi-people-fill tab-icon"></i>ALL IDENTITIES
-        </button>
-        <button class="nav-tab" data-tab="visitors">
-          <i class="bi bi-person-badge tab-icon"></i>VISITORS
-        </button>
-        <button class="nav-tab" data-tab="contractors">
-          <i class="bi bi-person-workspace tab-icon"></i>CONTRACTORS
-        </button>
-        <button class="nav-tab" data-tab="employees">
-          <i class="bi bi-person-check tab-icon"></i>EMPLOYEES
-        </button>
-        <button class="nav-tab" data-tab="spaces">
-          <i class="bi bi-door-open tab-icon"></i>SPACES
-        </button>
-        <button class="nav-tab" data-tab="audits">
-          <i class="bi bi-journal-check tab-icon"></i>ACCESS AUDITS
-        </button>
-        <button class="nav-tab" data-tab="occupancy">
-          <i class="bi bi-building-exclamation tab-icon"></i>BUILDING OCCUPANCY
-        </button>
-        <button class="nav-tab" data-tab="reports">
-          <i class="bi bi-file-earmark-bar-graph tab-icon"></i>REPORTS
-        </button>
-      </nav>
 
       <!-- ========== SUMMARY CARDS ROW ========== -->
       <section class="summary-cards">
@@ -174,7 +147,7 @@
         </div>
         <div class="summary-card">
           <div class="card-icon card-icon-green">
-            <i class="bi bi-person-check"></i>
+            <i class="bi bi-people"></i>
           </div>
           <div class="card-info">
             <span class="card-number">84,210</span>
@@ -183,7 +156,7 @@
         </div>
         <div class="summary-card">
           <div class="card-icon card-icon-orange">
-            <i class="bi bi-person-badge"></i>
+            <i class="bi bi-people"></i>
           </div>
           <div class="card-info">
             <span class="card-number">12,847</span>
@@ -192,7 +165,7 @@
         </div>
         <div class="summary-card">
           <div class="card-icon card-icon-purple">
-            <i class="bi bi-person-workspace"></i>
+            <i class="bi bi-people"></i>
           </div>
           <div class="card-info">
             <span class="card-number">5,320</span>
@@ -201,7 +174,7 @@
         </div>
         <div class="summary-card">
           <div class="card-icon card-icon-teal">
-            <i class="bi bi-door-open"></i>
+            <i class="bi bi-people"></i>
           </div>
           <div class="card-info">
             <span class="card-number">1,245</span>
@@ -210,18 +183,424 @@
         </div>
         <div class="summary-card">
           <div class="card-icon card-icon-red">
-            <i class="bi bi-building"></i>
+            <i class="bi bi-people"></i>
           </div>
           <div class="card-info">
             <span class="card-number">342</span>
             <span class="card-subtitle">Total Buildings</span>
           </div>
         </div>
+        <div class="summary-card">
+          <div class="card-icon card-icon-blue">
+            <i class="bi bi-person-check"></i>
+          </div>
+          <div class="card-info">
+            <span class="card-number">2,180</span>
+            <span class="card-subtitle">Check-ins Today</span>
+          </div>
+        </div>
+        <div class="summary-card">
+          <div class="card-icon card-icon-green">
+            <i class="bi bi-shield-check"></i>
+          </div>
+          <div class="card-info">
+            <span class="card-number">987</span>
+            <span class="card-subtitle">Access Granted</span>
+          </div>
+        </div>
+      </section>
+
+      <!---------------------------chart section--------------------------------------->
+
+      <section class="chart-section">
+
+            <!-- Card 1: Identity Count -->
+            <div class="chart-card async-card" style="--delay: 0.1s;">
+                <div class="card-header">
+                    <h3><b>Identity Count</b></h3>
+                    <div class="chart-filter">
+                        <span>ALL</span>
+                        <span>1Y</span>
+                        <span>6M</span>
+                        <span>3M</span>
+                        <span>1M</span>
+                        <span class="active">7D</span>
+                    </div>
+                </div>
+                <canvas id="identityChart"></canvas>
+            </div>
+
+            <!-- Card 2: Total Profiles Bar -->
+            <div class="chart-card async-card" style="--delay: 0.25s;">
+                <div class="card-header">
+                    <div>
+                        <h3><b>Total Profiles</b></h3>
+                        <div class="today-filter">
+                            <i class="bi bi-calendar3"></i>
+                            <span>Today</span>
+                            <i class="bi bi-chevron-down"></i>
+                        </div>
+                    </div>
+                </div>
+                <canvas id="profileChart"></canvas>
+                <div class="profile-legend">
+                    <div class="legend-item"><span class="legend-color" style="background:#8e63b7"></span> HQ Hybrid</div>
+                    <div class="legend-item"><span class="legend-color" style="background:#7d3c98"></span> HQ Remote</div>
+                    <div class="legend-item"><span class="legend-color" style="background:#9b59b6"></span> Non HQ Associates</div>
+                    <div class="legend-item"><span class="legend-color" style="background:#87ceeb"></span> Contractors w/out EID</div>
+                    <div class="legend-item"><span class="legend-color" style="background:#1f6f8b"></span> Contractor With EID</div>
+                    <div class="legend-item"><span class="legend-color" style="background:#d291ff"></span> Special Exception</div>
+                    <div class="legend-item"><span class="legend-color" style="background:#f39c12"></span> Visitor</div>
+                </div>
+            </div>
+
+            <!-- Card 3: Total Profiles Pie -->
+            <div class="chart-card profile-card async-card" style="--delay: 0.4s;">
+                <div class="card-header">
+                    <div>
+                        <h3><b>Total Profiles</b></h3>
+                        <div class="today-filter">
+                            <i class="bi bi-calendar3"></i>
+                            <span>Today</span>
+                            <i class="bi bi-chevron-down"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="profile-body">
+                    <div class="chart-area">
+                        <canvas id="pieChart"></canvas>
+                    </div>
+                    <div class="profile-stats">
+                        <div class="stat purple-light">140</div>
+                        <div class="stat purple-dark">140</div>
+                        <div class="stat violet">200</div>
+                        <div class="stat sky">150</div>
+                        <div class="stat blue">80</div>
+                        <div class="stat pink">70</div>
+                        <div class="stat orange">50</div>
+                    </div>
+                </div>
+
+                <div class="profile-legend">
+                    <div class="legend-item"><span class="legend-color purple-light"></span> HQ Hybrid</div>
+                    <div class="legend-item"><span class="legend-color purple-dark"></span> HQ Remote</div>
+                    <div class="legend-item"><span class="legend-color violet"></span> Non HQ Associates</div>
+                    <div class="legend-item"><span class="legend-color sky"></span> Contractors w/out EID</div>
+                    <div class="legend-item"><span class="legend-color blue"></span> Contractor With EID</div>
+                    <div class="legend-item"><span class="legend-color pink"></span> Special Exception</div>
+                    <div class="legend-item"><span class="legend-color orange"></span> Visitor</div>
+                </div>
+            </div>
+
+            <!-- Card 4: Recent Traveling Requests -->
+            <div class="chart-card async-card" style="--delay: 0.55s;">
+                <div class="card-header">
+                    <h3><b>Recent Traveling Requests</b></h3>
+                </div>
+                <div class="travel-table-wrapper">
+                    <table class="travel-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Travel Date</th>
+                                <th>Current Status</th>
+                                <th>Request Time</th>
+                                <th>Action Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>John</td>
+                                <td>2026-07-10</td>
+                                <td><span class="badge badge-checkin">Check-in</span></td>
+                                <td>09:15 AM</td>
+                                <td>09:30 AM</td>
+                            </tr>
+                            <tr>
+                                <td>Jane</td>
+                                <td>2026-07-11</td>
+                                <td><span class="badge badge-approved">Approved</span></td>
+                                <td>10:00 AM</td>
+                                <td>10:45 AM</td>
+                            </tr>
+                            <tr>
+                                <td>Doe</td>
+                                <td>2026-07-12</td>
+                                <td><span class="badge badge-pending">Pending</span></td>
+                                <td>11:20 AM</td>
+                                <td>--</td>
+                            </tr>
+                            <tr>
+                                <td>Smith</td>
+                                <td>2026-07-13</td>
+                                <td><span class="badge badge-rejected">Rejected</span></td>
+                                <td>08:45 AM</td>
+                                <td>09:00 AM</td>
+                            </tr>
+                            <tr>
+                                <td>Alice</td>
+                                <td>2026-07-14</td>
+                                <td><span class="badge badge-checkin">Check-in</span></td>
+                                <td>07:30 AM</td>
+                                <td>07:45 AM</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table-footer">
+                    <div class="pagination-area">
+                        <span>1–5 of 15</span>
+                        <div class="pagination-arrows">
+                            <button class="arrow-btn">&lt;</button>
+                            <button class="arrow-btn">&gt;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+      </section>
+
+      <!-- ========== NEW ANALYTICS SECTION ========== -->
+      <section class="analytics-section">
+
+          <div class="analytics-row row-3">
+
+              <div class="analytics-card">
+                  <div class="card-header">
+                      <h3>Employee Addition Trend</h3>
+                      <span class="card-range">Nov - May</span>
+                  </div>
+                  <div class="chart-wrapper">
+                      <canvas id="additionChart"></canvas>
+                  </div>
+              </div>
+
+              <div class="analytics-card">
+                  <div class="card-header">
+                      <h3>Employee Addition Trend</h3>
+                      <span class="card-range">Nov - May</span>
+                  </div>
+                  <div class="chart-wrapper">
+                      <canvas id="attritionChart"></canvas>
+                  </div>
+              </div>
+
+              <div class="analytics-card">
+                  <div class="card-header">
+                      <h3>Employee Addition Trend</h3>
+                      <span class="card-range">Nov - May</span>
+                  </div>
+                  <div class="chart-wrapper">
+                      <canvas id="attritionChart2"></canvas>
+                  </div>
+              </div>
+
+          </div>
+
+          <div class="analytics-row row-2">
+
+              <div class="analytics-card">
+                  <div class="card-header">
+                      <h3>Employee Traffic - Feb, 24</h3>
+                      <div class="card-filter">
+                          <span>ALL</span>
+                          <span>1Y</span>
+                          <span>6M</span>
+                          <span>3M</span>
+                          <span>1M</span>
+                          <span class="active">7D</span>
+                      </div>
+                  </div>
+                  <div class="chart-wrapper">
+                      <canvas id="employeeTraffic"></canvas>
+                  </div>
+              </div>
+
+              <div class="analytics-card">
+                  <div class="card-header">
+                      <h3>Contractors Traffic - Feb, 24</h3>
+                      <div class="card-filter">
+                          <span>ALL</span>
+                          <span>1Y</span>
+                          <span>6M</span>
+                          <span>3M</span>
+                          <span>1M</span>
+                          <span class="active">7D</span>
+                      </div>
+                  </div>
+                  <div class="chart-wrapper">
+                      <canvas id="contractorTraffic"></canvas>
+                  </div>
+              </div>
+
+          </div>
+
+      </section>
+
+      <!-- ========== TRAFFIC ANALYSIS CARD ========== -->
+      <section class="analytics-section">
+
+          <div class="traffic-card">
+              <div class="traffic-header">
+                  <h3>Traffic Analysis - Time Wise Type of Scan</h3>
+              </div>
+              <div class="traffic-body">
+
+                  <div class="traffic-left">
+                      <canvas id="trafficStackedChart"></canvas>
+                  </div>
+
+                  <div class="traffic-right">
+                      <div class="traffic-stats">
+                          <div class="stat-item">
+                              <span class="stat-label">Access Granted:</span>
+                              <span class="stat-value blue">2300</span>
+                          </div>
+                          <div class="stat-item">
+                              <span class="stat-label">Unique:</span>
+                              <span class="stat-value blue">2500</span>
+                          </div>
+                      </div>
+                      <div class="doughnut-wrapper">
+                          <canvas id="trafficDoughnut"></canvas>
+                      </div>
+                      <div class="traffic-line"></div>
+                  </div>
+
+              </div>
+          </div>
+
+      </section>
+
+      <!-- ========== TRAFFIC ANALYSIS - TYPE OF SCAN ========== -->
+      <section class="analytics-section">
+
+          <div class="scan-card">
+              <div class="scan-header">
+                  <h3>Traffic Analysis - Type of Scan</h3>
+              </div>
+              <div class="scan-body">
+
+                  <div class="scan-left">
+                      <canvas id="scanLineChart"></canvas>
+                      <div class="scan-tooltip" id="scanTooltip">
+                          <div class="tooltip-title" id="tooltipTitle"></div>
+                          <div class="tooltip-row">
+                              <span class="tooltip-dot blue"></span>
+                              <span class="tooltip-label">PROX :</span>
+                              <span class="tooltip-value blue" id="tooltipProx"></span>
+                          </div>
+                          <div class="tooltip-row">
+                              <span class="tooltip-dot green"></span>
+                              <span class="tooltip-label">Mobile :</span>
+                              <span class="tooltip-value green" id="tooltipMobile"></span>
+                          </div>
+                          <div class="tooltip-row">
+                              <span class="tooltip-dot orange"></span>
+                              <span class="tooltip-label">QR :</span>
+                              <span class="tooltip-value orange" id="tooltipQR"></span>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="scan-right">
+                      <div class="scan-box scan-box-blue">
+                          <div class="scan-box-indicator" style="background:#4f8df7"></div>
+                          <div class="scan-box-text">
+                              <span class="scan-box-pct">273% PROX</span>
+                              <span class="scan-box-num">500</span>
+                          </div>
+                      </div>
+                      <div class="scan-box scan-box-green">
+                          <div class="scan-box-indicator" style="background:#57d69b"></div>
+                          <div class="scan-box-text">
+                              <span class="scan-box-pct">273% PROX</span>
+                              <span class="scan-box-num">500</span>
+                          </div>
+                      </div>
+                      <div class="scan-box scan-box-orange">
+                          <div class="scan-box-indicator" style="background:#f6a23a"></div>
+                          <div class="scan-box-text">
+                              <span class="scan-box-pct">273% PROX</span>
+                              <span class="scan-box-num">500</span>
+                          </div>
+                      </div>
+                  </div>
+
+              </div>
+          </div>
+
+      </section>
+
+      <!-- ========== TRAFFIC ANALYSIS - BY PROFILE TYPE ========== -->
+      <section class="analytics-section">
+
+          <div class="profile-type-card">
+              <div class="profile-type-header">
+                  <h3>Traffic Analysis - By Profile Type</h3>
+                  <div class="profile-type-stats">
+                      <span class="pt-label">Access Granted:</span>
+                      <span class="pt-value">2300</span>
+                      <span class="pt-label">Unique:</span>
+                      <span class="pt-value">2500</span>
+                  </div>
+              </div>
+              <div class="profile-type-body">
+
+                  <div class="profile-type-left">
+                      <canvas id="profileTypeBarChart"></canvas>
+                      <div class="profile-type-legend">
+                          <div class="pt-legend-item">
+                              <span class="pt-legend-dot" style="background:#b185db"></span> Employee
+                          </div>
+                          <div class="pt-legend-item">
+                              <span class="pt-legend-dot" style="background:#f6a623"></span> Visitor
+                          </div>
+                          <div class="pt-legend-item">
+                              <span class="pt-legend-dot" style="background:#2196f3"></span> Contractor
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="profile-type-right">
+                      <div class="pt-doughnut-wrapper">
+                          <canvas id="profileTypeDoughnut"></canvas>
+                      </div>
+                      <div class="pt-stat-cards">
+                          <div class="pt-stat-card pt-stat-orange">
+                              <div class="scan-box-indicator" style="background:#f6a623"></div>
+                              <div class="pt-stat-card-text">
+                                  <span class="pt-stat-pct">33% Employee</span>
+                                  <span class="pt-stat-num">500</span>
+                              </div>
+                          </div>
+                          <div class="pt-stat-card pt-stat-purple">
+                              <div class="scan-box-indicator" style="background:#b185db"></div>
+                              <div class="pt-stat-card-text">
+                                  <span class="pt-stat-pct">33% Employee</span>
+                                  <span class="pt-stat-num">500</span>
+                              </div>
+                          </div>
+                          <div class="pt-stat-card pt-stat-yellow">
+                              <div class="scan-box-indicator" style="background:#facc15"></div>
+                              <div class="pt-stat-card-text">
+                                  <span class="pt-stat-pct">33% Employee</span>
+                                  <span class="pt-stat-num">500</span>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+
+              </div>
+          </div>
+
       </section>
 
     </main>
   </div>
 
-  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="../js/script.js"></script>
 </body>
 </html>

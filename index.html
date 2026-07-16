@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enterprise Analytics Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <section class="analytics-section">
+
+    <!-- Row 1: 3 Cards -->
+    <div class="analytics-grid row-3">
+
+      <div class="analytics-card">
+        <div class="card-header">
+          <h3>Employee Addition Trend</h3>
+          <span class="card-range">Nov - May</span>
+        </div>
+        <div class="chart-container">
+          <canvas id="additionChart"></canvas>
+        </div>
+      </div>
+
+      <div class="analytics-card">
+        <div class="card-header">
+          <h3>Employee Attrition Trend</h3>
+          <span class="card-range">Nov - May</span>
+        </div>
+        <div class="chart-container">
+          <canvas id="attritionChart"></canvas>
+        </div>
+      </div>
+
+      <div class="analytics-card">
+        <div class="card-header">
+          <h3>Employee Attrition Trend</h3>
+          <span class="card-range">Nov - May</span>
+        </div>
+        <div class="chart-container">
+          <canvas id="attritionChart2"></canvas>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Row 2: 2 Cards -->
+    <div class="analytics-grid row-2">
+
+      <div class="analytics-card">
+        <div class="card-header">
+          <h3>Employee Traffic - Feb, 24</h3>
+          <div class="card-filter">
+            <span>ALL</span>
+            <span>1Y</span>
+            <span>6M</span>
+            <span>3M</span>
+            <span>1M</span>
+            <span class="active">7D</span>
+          </div>
+        </div>
+        <div class="chart-container">
+          <canvas id="employeeTraffic"></canvas>
+        </div>
+      </div>
+
+      <div class="analytics-card">
+        <div class="card-header">
+          <h3>Contractors Traffic - Feb, 24</h3>
+          <div class="card-filter">
+            <span>ALL</span>
+            <span>1Y</span>
+            <span>6M</span>
+            <span>3M</span>
+            <span>1M</span>
+            <span class="active">7D</span>
+          </div>
+        </div>
+        <div class="chart-container">
+          <canvas id="contractorTraffic"></canvas>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
