@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enterprise Dashboard</title>
+
+  <link rel="stylesheet" href="css/output.css">
+  <link rel="stylesheet" href="test.css">
+  <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+
+<body class="bg-white min-h-screen overflow-x-hidden">
+
+  <!-- ===================== TOP HEADER ===================== -->
+  <header class="bg-[#f5f5f5] border-b border-gray-300 h-14 flex items-center justify-between px-4 fixed top-0 left-0 right-0 z-[1100] shadow-[0_1px_3px_rgba(0,0,0,0.08)]">
+    <div class="flex items-center gap-3">
+      <img src="images/cleancode.png" alt="Logo" class="w-8 h-8 rounded">
+    </div>
+    <div class="flex items-center gap-3">
+      <button class="w-8 h-8 rounded-full flex justify-center items-center border-none cursor-pointer bg-sky-500 text-white text-sm">
+        <i class="bi bi-geo-alt"></i>
+      </button>
+      <span class="text-xs text-gray-700 font-semibold">Web Team</span>
+      <span class="text-xs text-gray-500">- Non HQO -</span>
+      <span class="text-xs font-bold text-gray-700">(EDT)</span>
+    </div>
+    <div class="flex items-center gap-3">
+      <button class="w-8 h-8 rounded-full flex justify-center items-center border-none cursor-pointer bg-sky-500 text-white text-sm">
+        <i class="bi bi-person"></i>
+      </button>
+      <i class="bi bi-geo-alt text-gray-500"></i>
+      <i class="bi bi-link-45deg text-gray-500"></i>
+      <i class="bi bi-grid text-gray-500"></i>
+      <i class="bi bi-envelope text-gray-500"></i>
+      <div class="relative">
+        <i class="bi bi-bell text-gray-500 text-lg"></i>
+        <span class="notification-badge">10</span>
+      </div>
+      <i class="bi bi-arrow-clockwise text-gray-500"></i>
+      <img src="images/user.jpg" class="w-8 h-8 rounded-full object-cover" alt="User">
+    </div>
+  </header>
+
+  <!-- ===================== SECOND TOOLBAR ===================== -->
+  <div class="bg-white h-14 border-b border-gray-200 flex items-center justify-between px-4 fixed top-14 left-0 right-0 z-[1099]">
+    <div class="flex items-center gap-5">
+      <button class="text-gray-600 hover:text-blue-600 transition-colors"><i class="bi bi-list text-xl"></i></button>
+      <button class="text-gray-600 hover:text-blue-600 transition-colors"><i class="bi bi-grid text-lg"></i></button>
+      <button class="text-gray-600 hover:text-blue-600 transition-colors"><i class="bi bi-list-ul text-lg"></i></button>
+    </div>
+    <div class="w-[350px]">
+      <select class="toolbar-select w-full border border-gray-300 rounded-md py-2 px-3 text-[13px] text-gray-500 outline-none bg-white focus:border-blue-500">
+        <option>Select...</option>
+      </select>
+    </div>
+    <div class="flex items-center gap-1.5">
+      <img src="images/micro.png" alt="Microsoft" class="h-10">
+      <span class="font-bold text-sm text-gray-700">Microsoft</span>
+    </div>
+  </div>
+
+  <!-- ===================== SIDEBAR + MAIN LAYOUT ===================== -->
+  <div class="flex-wrapper">
+
+    <!-- Sidebar -->
+    <aside class="sidebar bg-[#3f3a37] relative z-[1000] flex flex-col overflow-y-auto overflow-x-hidden shrink-0" style="width:52px">
+      <ul class="sidebar-menu list-none m-0 p-0 flex-1">
+        <li class="sidebar-active" data-tooltip="Dashboard"><i class="bi bi-house"></i></li>
+        <li data-tooltip="Analytics"><i class="bi bi-graph-up"></i></li>
+        <li data-tooltip="People"><i class="bi bi-people"></i></li>
+        <li data-tooltip="Reports"><i class="bi bi-clipboard-data"></i></li>
+        <li data-tooltip="Inventory"><i class="bi bi-box-seam"></i></li>
+        <li data-tooltip="Global"><i class="bi bi-globe"></i></li>
+        <li data-tooltip="Calendar"><i class="bi bi-calendar3"></i></li>
+        <li data-tooltip="Messages"><i class="bi bi-envelope"></i></li>
+        <li data-tooltip="Buildings"><i class="bi bi-building"></i></li>
+        <li data-tooltip="Database"><i class="bi bi-database"></i></li>
+        <li data-tooltip="Security"><i class="bi bi-shield-lock"></i></li>
+        <li data-tooltip="Card List"><i class="bi bi-card-list"></i></li>
+        <li data-tooltip="Files"><i class="bi bi-file-earmark-text"></i></li>
+        <li data-tooltip="Bar Chart"><i class="bi bi-bar-chart"></i></li>
+        <li data-tooltip="Settings"><i class="bi bi-gear"></i></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col min-h-[calc(100vh-112px)]">
+
+      <!-- ========== HERO SECTION ========== -->
+      <section class="hero-section">
+        <div class="hero-left">
+          <div class="building-card">
+            <div class="image-wrapper">
+              <img src="images/building.png" class="building-img w-full h-full object-cover">
+              <span class="badge-federated">Federated View</span>
+            </div>
+            <div class="filters flex gap-2 p-2.5">
+              <div class="filter-box flex-1">
+                <label class="block text-sm font-semibold text-gray-500 mb-9">5 Region</label>
+                <select class="w-[34px] h-[34px] border border-[#7c7a7aec] rounded-md text-xs px-2 bg-white/50 text-gray-500 outline-none cursor-pointer focus:border-[#2196f3]">
+                  <option>Select...</option>
+                </select>
+              </div>
+              <div class="filter-box flex-1">
+                <label class="block text-sm font-semibold text-gray-500 mb-9">5 Sites</label>
+                <select class="w-full h-[34px] border border-[#7c7a7aec] rounded-md text-xs px-2 bg-white/50 text-gray-500 outline-none cursor-pointer focus:border-[#2196f3]">
+                  <option>Select...</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-right flex-1 min-w-0">
+          <section class="tabs-section">
+            <button>ALL IDENTITIES</button>
+            <button>VISITORS</button>
+            <button>CONTRACTORS</button>
+            <button>EMPLOYEES</button>
+            <button>SPACES</button>
+            <button>ACCESS AUDITS</button>
+            <button>BUILDING OCCUPANCY</button>
+            <button>REPORTS</button>
+          </section>
+        </div>
+      </section>
+
+      <!-- ========== SUMMARY CARDS ROW ========== -->
+      <section class="summary-cards grid grid-cols-8 gap-4 py-5 px-[60px] bg-white">
+        <div class="summary-card bg-white border border-gray-200 rounded-lg py-[18px] px-4 flex items-center gap-3.5 shadow-[0_1px_3px_rgba(0,0,0,0.04),0_1px_2px_rgba(0,0,0,0.03)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] hover:-translate-y-[1px] transition-all cursor-default">
+          <div class="w-11 h-11 rounded-[10px] flex items-center justify-center text-xl shrink-0 bg-blue-50 text-blue-500"><i class="bi bi-people"></i></div>
+          <div class="flex flex-col"><span class="text-xl font-bold text-gray-900 leading-tight">123,563</span><span class="text-[11px] text-gray-400 font-medium mt-0.5">Total Profiles</span></div>
+        </div>
+        <div class="summary-card bg-white border border-gray-200 rounded-lg py-[18px] px-4 flex items-center gap-3.5 shadow-[0_1px_3px_rgba(0,0,0,0.04),0_1px_2px_rgba(0,0,0,0.03)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] hover:-translate-y-[1px] transition-all cursor-default">
+          <div class="w-11 h-11 rounded-[10px] flex items-center justify-center text-xl shrink-0 bg-green-50 text-green-500"><i class="bi bi-people"></i></div>
+          <div class="flex flex-col"><span class="text-xl font-bold text-gray-900 leading-tight">84,210</span><span class="text-[11px] text-gray-400 font-medium mt-0.5">Active Employees</span></div>
+        </div>
+        <div class="summary-card bg-white border border-gray-200 rounded-lg py-[18px] px-4 flex items-center gap-3.5 shadow-[0_1px_3px_rgba(0,0,0,0.04),0_1px_2px_rgba(0,0,0,0.03)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] hover:-translate-y-[1px] transition-all cursor-default">
+          <div class="w-11 h-11 rounded-[10px] flex items-center justify-center text-xl shrink-0 bg-orange-50 text-orange-500"><i class="bi bi-people"></i></div>
+          <div class="flex flex-col"><span class="text-xl font-bold text-gray-900 leading-tight">12,847</span><span class="text-[11px] text-gray-400 font-medium mt-0.5">Visitors Today</span></div>
+        </div>
+        <div class="summary-card bg-white border border-gray-200 rounded-lg py-[18px] px-4 flex items-center gap-3.5 shadow-[0_1px_3px_rgba(0,0,0,0.04),0_1px_2px_rgba(0,0,0,0.03)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] hover:-translate-y-[1px] transition-all cursor-default">
+          <div class="w-11 h-11 rounded-[10px] flex items-center justify-center text-xl shrink-0 bg-purple-50 text-purple-500"><i class="bi bi-people"></i></div>
+          <div class="flex flex-col"><span class="text-xl font-bold text-gray-900 leading-tight">5,320</span><span class="text-[11px] text-gray-400 font-medium mt-0.5">Contractors</span></div>
+        </div>
+        <div class="summary-card bg-white border border-gray-200 rounded-lg py-[18px] px-4 flex items-center gap-3.5 shadow-[0_1px_3px_rgba(0,0,0,0.04),0_1px_2px_rgba(0,0,0,0.03)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] hover:-translate-y-[1px] transition-all cursor-default">
+          <div class="w-11 h-11 rounded-[10px] flex items-center justify-center text-xl shrink-0 bg-teal-50 text-teal-500"><i class="bi bi-people"></i></div>
+          <div class="flex flex-col"><span class="text-xl font-bold text-gray-900 leading-tight">1,245</span><span class="text-[11px] text-gray-400 font-medium mt-0.5">Access Points</span></div>
+        </div>
+        <div class="summary-card bg-white border border-gray-200 rounded-lg py-[18px] px-4 flex items-center gap-3.5 shadow-[0_1px_3px_rgba(0,0,0,0.04),0_1px_2px_rgba(0,0,0,0.03)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] hover:-translate-y-[1px] transition-all cursor-default">
+          <div class="w-11 h-11 rounded-[10px] flex items-center justify-center text-xl shrink-0 bg-red-50 text-red-500"><i class="bi bi-people"></i></div>
+          <div class="flex flex-col"><span class="text-xl font-bold text-gray-900 leading-tight">342</span><span class="text-[11px] text-gray-400 font-medium mt-0.5">Total Buildings</span></div>
+        </div>
+        <div class="summary-card bg-white border border-gray-200 rounded-lg py-[18px] px-4 flex items-center gap-3.5 shadow-[0_1px_3px_rgba(0,0,0,0.04),0_1px_2px_rgba(0,0,0,0.03)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] hover:-translate-y-[1px] transition-all cursor-default">
+          <div class="w-11 h-11 rounded-[10px] flex items-center justify-center text-xl shrink-0 bg-blue-50 text-blue-500"><i class="bi bi-person-check"></i></div>
+          <div class="flex flex-col"><span class="text-xl font-bold text-gray-900 leading-tight">2,180</span><span class="text-[11px] text-gray-400 font-medium mt-0.5">Check-ins Today</span></div>
+        </div>
+        <div class="summary-card bg-white border border-gray-200 rounded-lg py-[18px] px-4 flex items-center gap-3.5 shadow-[0_1px_3px_rgba(0,0,0,0.04),0_1px_2px_rgba(0,0,0,0.03)] hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)] hover:-translate-y-[1px] transition-all cursor-default">
+          <div class="w-11 h-11 rounded-[10px] flex items-center justify-center text-xl shrink-0 bg-green-50 text-green-500"><i class="bi bi-shield-check"></i></div>
+          <div class="flex flex-col"><span class="text-xl font-bold text-gray-900 leading-tight">987</span><span class="text-[11px] text-gray-400 font-medium mt-0.5">Access Granted</span></div>
+        </div>
+      </section>
+
+      <!-- ========== CHART SECTION ========== -->
+      <section class="chart-section grid grid-cols-2 gap-5 py-5 px-[60px]">
+
+        <!-- Card 1: Identity Count -->
+        <div class="chart-card bg-white border border-gray-200 rounded-lg p-[15px] h-[380px] shadow-[0_2px_8px_rgba(0,0,0,0.05)] overflow-hidden async-card" style="--delay: 0.1s;">
+          <div class="flex justify-between items-center mb-[15px]">
+            <h3 class="text-sm text-gray-700 font-bold"><b>Identity Count</b></h3>
+            <div class="chart-filter flex gap-2.5 text-[10px] text-gray-400 font-semibold">
+              <span>ALL</span><span>1Y</span><span>6M</span><span>3M</span><span>1M</span><span class="text-[#2196f3] font-bold">7D</span>
+            </div>
+          </div>
+          <canvas id="identityChart"></canvas>
+        </div>
+
+        <!-- Card 2: Total Profiles Bar -->
+        <div class="chart-card bg-white border border-gray-200 rounded-lg p-[15px] h-[380px] shadow-[0_2px_8px_rgba(0,0,0,0.05)] overflow-hidden async-card" style="--delay: 0.25s;">
+          <div class="flex justify-between items-center mb-[15px]">
+            <div>
+              <h3 class="text-sm text-gray-700 font-bold"><b>Total Profiles</b></h3>
+              <div class="inline-flex items-center gap-1.5 text-xs text-gray-500 mt-1">
+                <i class="bi bi-calendar3"></i><span>Today</span><i class="bi bi-chevron-down"></i>
+              </div>
+            </div>
+          </div>
+          <canvas id="profileChart"></canvas>
+          <div class="profile-legend">
+            <div class="legend-item"><span class="legend-color" style="background:#8e63b7"></span> HQ Hybrid</div>
+            <div class="legend-item"><span class="legend-color" style="background:#7d3c98"></span> HQ Remote</div>
+            <div class="legend-item"><span class="legend-color" style="background:#9b59b6"></span> Non HQ Associates</div>
+            <div class="legend-item"><span class="legend-color" style="background:#87ceeb"></span> Contractors w/out EID</div>
+            <div class="legend-item"><span class="legend-color" style="background:#1f6f8b"></span> Contractor With EID</div>
+            <div class="legend-item"><span class="legend-color" style="background:#d291ff"></span> Special Exception</div>
+            <div class="legend-item"><span class="legend-color" style="background:#f39c12"></span> Visitor</div>
+          </div>
+        </div>
+
+        <!-- Card 3: Total Profiles Pie -->
+        <div class="chart-card profile-card bg-white border border-gray-200 rounded-lg p-[15px] h-[380px] shadow-[0_2px_8px_rgba(0,0,0,0.05)] overflow-hidden flex flex-col async-card" style="--delay: 0.4s;">
+          <div class="flex justify-between items-center mb-2">
+            <div>
+              <h3 class="text-[13px] text-gray-700 font-bold"><b>Total Profiles</b></h3>
+              <div class="inline-flex items-center gap-1.5 text-xs text-gray-500 mt-1">
+                <i class="bi bi-calendar3"></i><span>Today</span><i class="bi bi-chevron-down"></i>
+              </div>
+            </div>
+          </div>
+          <div class="profile-body">
+            <div class="chart-area">
+              <canvas id="pieChart"></canvas>
+            </div>
+            <div class="profile-stats">
+              <div class="stat" style="background:#a86dd7">140</div>
+              <div class="stat" style="background:#6d2d91">140</div>
+              <div class="stat" style="background:#8e44ad">200</div>
+              <div class="stat" style="background:#6ec5e9">150</div>
+              <div class="stat" style="background:#1b6b8f">80</div>
+              <div class="stat" style="background:#d79af7">70</div>
+              <div class="stat" style="background:#f39c12">50</div>
+            </div>
+          </div>
+          <div class="profile-legend">
+            <div class="legend-item"><span class="legend-color" style="background:#a86dd7"></span> HQ Hybrid</div>
+            <div class="legend-item"><span class="legend-color" style="background:#6d2d91"></span> HQ Remote</div>
+            <div class="legend-item"><span class="legend-color" style="background:#8e44ad"></span> Non HQ Associates</div>
+            <div class="legend-item"><span class="legend-color" style="background:#6ec5e9"></span> Contractors w/out EID</div>
+            <div class="legend-item"><span class="legend-color" style="background:#1b6b8f"></span> Contractor With EID</div>
+            <div class="legend-item"><span class="legend-color" style="background:#d79af7"></span> Special Exception</div>
+            <div class="legend-item"><span class="legend-color" style="background:#f39c12"></span> Visitor</div>
+          </div>
+        </div>
+
+        <!-- Card 4: Recent Traveling Requests -->
+        <div class="chart-card bg-white border border-gray-200 rounded-lg p-[15px] h-[380px] shadow-[0_2px_8px_rgba(0,0,0,0.05)] overflow-hidden async-card" style="--delay: 0.55s;">
+          <div class="flex justify-between items-center mb-[15px]">
+            <h3 class="text-sm text-gray-700 font-bold"><b>Recent Traveling Requests</b></h3>
+          </div>
+          <div class="overflow-x-auto max-h-[210px] overflow-y-auto">
+            <table class="w-full border-collapse text-xs">
+              <thead>
+                <tr>
+                  <th class="text-left py-2 px-2.5 font-semibold text-gray-500 border-b-2 border-gray-200 whitespace-nowrap sticky top-0 bg-white">Name</th>
+                  <th class="text-left py-2 px-2.5 font-semibold text-gray-500 border-b-2 border-gray-200 whitespace-nowrap sticky top-0 bg-white">Travel Date</th>
+                  <th class="text-left py-2 px-2.5 font-semibold text-gray-500 border-b-2 border-gray-200 whitespace-nowrap sticky top-0 bg-white">Current Status</th>
+                  <th class="text-left py-2 px-2.5 font-semibold text-gray-500 border-b-2 border-gray-200 whitespace-nowrap sticky top-0 bg-white">Request Time</th>
+                  <th class="text-left py-2 px-2.5 font-semibold text-gray-500 border-b-2 border-gray-200 whitespace-nowrap sticky top-0 bg-white">Action Time</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="hover:bg-gray-50">
+                  <td class="py-[9px] px-2.5 text-gray-700 border-b border-gray-100 whitespace-nowrap">John</td>
+                  <td class="py-[9px] px-2.5 text-gray-700 border-b border-gray-100 whitespace-nowrap">2026-07-10</td>
+                  <td class="py-[9px] px-2.5 border-b border-gray-100 whitespace-nowrap"><span class="inline-flex items-center justify-center px-3.5 py-1 rounded-full text-[11px] font-medium bg-[#10b981] text-white min-w-[85px]">Check-in</span></td>
+                  <td class="py-[9px] px-2.5 text-gray-700 border-b border-gray-100 whitespace-nowrap">09:15 AM</td>
+                  <td class="py-[9px] px-2.5 text-gray-700 border-b border-gray-100 whitespace-nowrap">09:30 AM</td>
+                </tr>
+                <tr class="hover:bg-gray-50">
+                  <td class="py-[9px] px-2.5 text-gray-700 border-b border-gray-100 whitespace-nowrap">Jane</td>
+                  <td class="py-[9px] px-2.5 text-gray-700 border-b border-gray-100 whitespace-nowrap">2026-07-11</td>
+                  <td class="py-[9px] px-2.5 border-b border-gray-100 whitespace-nowrap"><span class="inline-flex items-center justify-center px-3.5 py-1 rounded-full text-[11px] font-medium bg-[#3b82f6] text-white min-w-[85px]">Approved</span></td>
+                  <td class="py-[9px] px-2.5 text-gray-700 border-b border-gray-100 whitespace-nowrap">10:00 AM</td>
+                  <td class="py-[9px] px-2.5 text-gray-700 border-b border-gray-100 whitespace-nowrap">10:45 AM</td>
+                </tr>
+                <tr class="hover:bg-gray-50">
+                  <td class="py-[9px] px-2.5 text-gray-700 border-b border-gray-100 whitespace-nowrap">Doe</td>
+                  <td class="py-[9px] px-2.5 text-gray-700 border-b border-gray-100 whitespace-nowrap">2026-07-12</td>
+                  <td class="py-[9px] px-2.5 border-b border-gray-100 whitespace-nowrap"><span class="inline-flex items-center justify-center px-3.5 py-1 rounded-full text-[11px] font-medium bg-[#f59e0b] text-white min-w-[85px]">Pending</span></td>
+                  <td class="py-[9px] px-2.5 text-gray-700 border-b border-gray-100 whitespace-nowrap">11:20 AM</td>
+                  <td class="py-[9px] px-2.5 text-gray-700 border-b border-gray-100 whitespace-nowrap">--</td>
+                </tr>
+                <tr class="hover:bg-gray-50">
+                  <td class="py-[9px] px-2.5 text-gray-700 border-b border-gray-100 whitespace-nowrap">Smith</td>
+                  <td class="py-[9px] px-2.5 text-gray-700 border-b border-gray-100 whitespace-nowrap">2026-07-13</td>
+                  <td class="py-[9px] px-2.5 border-b border-gray-100 whitespace-nowrap"><span class="inline-flex items-center justify-center px-3.5 py-1 rounded-full text-[11px] font-medium bg-[#ef4444] text-white min-w-[85px]">Rejected</span></td>
+                  <td class="py-[9px] px-2.5 text-gray-700 border-b border-gray-100 whitespace-nowrap">08:45 AM</td>
+                  <td class="py-[9px] px-2.5 text-gray-700 border-b border-gray-100 whitespace-nowrap">09:00 AM</td>
+                </tr>
+                <tr class="hover:bg-gray-50">
+                  <td class="py-[9px] px-2.5 text-gray-700 border-b border-gray-100 whitespace-nowrap">Alice</td>
+                  <td class="py-[9px] px-2.5 text-gray-700 border-b border-gray-100 whitespace-nowrap">2026-07-14</td>
+                  <td class="py-[9px] px-2.5 border-b border-gray-100 whitespace-nowrap"><span class="inline-flex items-center justify-center px-3.5 py-1 rounded-full text-[11px] font-medium bg-[#10b981] text-white min-w-[85px]">Check-in</span></td>
+                  <td class="py-[9px] px-2.5 text-gray-700 border-b border-gray-100 whitespace-nowrap">07:30 AM</td>
+                  <td class="py-[9px] px-2.5 text-gray-700 border-b border-gray-100 whitespace-nowrap">07:45 AM</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="flex justify-end items-center mt-2.5 pt-2 border-t border-gray-200 text-xs text-gray-500">
+            <div class="flex items-center gap-2.5">
+              <span>1–5 of 15</span>
+              <div class="flex gap-1">
+                <button class="arrow-btn w-[26px] h-[26px] border-none bg-transparent text-gray-700 text-sm cursor-pointer flex items-center justify-center rounded hover:bg-gray-100">&lt;</button>
+                <button class="arrow-btn w-[26px] h-[26px] border-none bg-transparent text-gray-700 text-sm cursor-pointer flex items-center justify-center rounded hover:bg-gray-100">&gt;</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ========== ANALYTICS: ADDITION TREND ========== -->
+      <section class="analytics-section">
+        <div class="analytics-row row-3 grid grid-cols-3 gap-5">
+          <div class="analytics-card bg-white border border-gray-200 rounded-md shadow-[0_1px_3px_rgba(0,0,0,0.06)] p-[18px] flex flex-col">
+            <div class="flex justify-between items-center mb-3">
+              <h3 class="text-[17px] font-bold text-gray-700">Employee Addition Trend</h3>
+              <span class="text-sm font-semibold text-gray-400">Nov - May</span>
+            </div>
+            <div class="flex-1 relative min-h-[250px]"><canvas id="additionChart"></canvas></div>
+          </div>
+          <div class="analytics-card bg-white border border-gray-200 rounded-md shadow-[0_1px_3px_rgba(0,0,0,0.06)] p-[18px] flex flex-col">
+            <div class="flex justify-between items-center mb-3">
+              <h3 class="text-[17px] font-bold text-gray-700">Employee Addition Trend</h3>
+              <span class="text-sm font-semibold text-gray-400">Nov - May</span>
+            </div>
+            <div class="flex-1 relative min-h-[250px]"><canvas id="attritionChart"></canvas></div>
+          </div>
+          <div class="analytics-card bg-white border border-gray-200 rounded-md shadow-[0_1px_3px_rgba(0,0,0,0.06)] p-[18px] flex flex-col">
+            <div class="flex justify-between items-center mb-3">
+              <h3 class="text-[17px] font-bold text-gray-700">Employee Addition Trend</h3>
+              <span class="text-sm font-semibold text-gray-400">Nov - May</span>
+            </div>
+            <div class="flex-1 relative min-h-[250px]"><canvas id="attritionChart2"></canvas></div>
+          </div>
+        </div>
+
+        <!-- ========== ANALYTICS: TRAFFIC ========== -->
+        <div class="analytics-row row-2 grid grid-cols-2 gap-5">
+          <div class="analytics-card bg-white border border-gray-200 rounded-md shadow-[0_1px_3px_rgba(0,0,0,0.06)] p-[18px] flex flex-col">
+            <div class="flex justify-between items-center mb-3">
+              <h3 class="text-[17px] font-bold text-gray-700">Employee Traffic - Feb, 24</h3>
+              <div class="card-filter flex gap-2.5 text-[11px] font-semibold text-gray-400">
+                <span>ALL</span><span>1Y</span><span>6M</span><span>3M</span><span>1M</span><span class="text-[#2196f3]">7D</span>
+              </div>
+            </div>
+            <div class="flex-1 relative min-h-[250px]"><canvas id="employeeTraffic"></canvas></div>
+          </div>
+          <div class="analytics-card bg-white border border-gray-200 rounded-md shadow-[0_1px_3px_rgba(0,0,0,0.06)] p-[18px] flex flex-col">
+            <div class="flex justify-between items-center mb-3">
+              <h3 class="text-[17px] font-bold text-gray-700">Contractors Traffic - Feb, 24</h3>
+              <div class="card-filter flex gap-2.5 text-[11px] font-semibold text-gray-400">
+                <span>ALL</span><span>1Y</span><span>6M</span><span>3M</span><span>1M</span><span class="text-[#2196f3]">7D</span>
+              </div>
+            </div>
+            <div class="flex-1 relative min-h-[250px]"><canvas id="contractorTraffic"></canvas></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== TRAFFIC ANALYSIS: TIME WISE ========== -->
+      <section class="analytics-section">
+        <div class="traffic-card bg-white border border-gray-200 rounded-md shadow-[0_1px_3px_rgba(0,0,0,0.06)] p-[18px] h-[380px] flex flex-col">
+          <div class="mb-3"><h3 class="text-lg font-bold text-gray-700">Traffic Analysis - Time Wise Type of Scan</h3></div>
+          <div class="flex-1 flex gap-[18px]">
+            <div class="flex-[75] relative"><canvas id="trafficStackedChart"></canvas></div>
+            <div class="flex-[25] flex flex-col items-center justify-center gap-2.5">
+              <div class="flex flex-col items-end gap-1 w-full pr-2.5">
+                <div class="flex gap-1.5 items-baseline"><span class="text-[13px] font-semibold text-gray-500">Access Granted:</span><span class="text-lg font-bold text-[#2563eb]">2300</span></div>
+                <div class="flex gap-1.5 items-baseline"><span class="text-[13px] font-semibold text-gray-500">Unique:</span><span class="text-lg font-bold text-[#2563eb]">2500</span></div>
+              </div>
+              <div class="doughnut-wrapper w-[140px] h-[140px] relative"><canvas id="trafficDoughnut"></canvas></div>
+              <div class="w-full h-[2px] bg-[#cffafe] rounded mt-1"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== TRAFFIC ANALYSIS: TYPE OF SCAN ========== -->
+      <section class="analytics-section">
+        <div class="scan-card bg-white border border-gray-200 rounded-lg shadow-[0_1px_3px_rgba(0,0,0,0.06)] p-[18px] flex flex-col">
+          <div class="mb-3"><h3 class="text-base font-semibold text-gray-700">Traffic Analysis - Type of Scan</h3></div>
+          <div class="flex-1 flex gap-[18px] min-h-[280px]">
+            <div class="flex-[80] relative">
+              <canvas id="scanLineChart"></canvas>
+              <div class="scan-tooltip" id="scanTooltip">
+                <div class="tooltip-title" id="tooltipTitle"></div>
+                <div class="tooltip-row"><span class="tooltip-dot" style="background:#4f8df7"></span><span class="tooltip-label">PROX :</span><span class="tooltip-value" style="color:#4f8df7" id="tooltipProx"></span></div>
+                <div class="tooltip-row"><span class="tooltip-dot" style="background:#57d69b"></span><span class="tooltip-label">Mobile :</span><span class="tooltip-value" style="color:#57d69b" id="tooltipMobile"></span></div>
+                <div class="tooltip-row"><span class="tooltip-dot" style="background:#f6a23a"></span><span class="tooltip-label">QR :</span><span class="tooltip-value" style="color:#f6a23a" id="tooltipQR"></span></div>
+              </div>
+            </div>
+            <div class="flex-[20] flex flex-col justify-center gap-3 items-end">
+              <div class="scan-box bg-[#e8f0fe] w-[90px] h-[60px] rounded-md flex items-center gap-1.5 p-2">
+                <div class="w-2 h-2 rounded-sm shrink-0" style="background:#4f8df7"></div>
+                <div class="flex flex-col gap-0.5"><span class="text-[9px] font-semibold text-gray-500">273% PROX</span><span class="text-base font-bold text-gray-700">500</span></div>
+              </div>
+              <div class="scan-box bg-[#e6f9f0] w-[90px] h-[60px] rounded-md flex items-center gap-1.5 p-2">
+                <div class="w-2 h-2 rounded-sm shrink-0" style="background:#57d69b"></div>
+                <div class="flex flex-col gap-0.5"><span class="text-[9px] font-semibold text-gray-500">273% PROX</span><span class="text-base font-bold text-gray-700">500</span></div>
+              </div>
+              <div class="scan-box bg-[#fef4e6] w-[90px] h-[60px] rounded-md flex items-center gap-1.5 p-2">
+                <div class="w-2 h-2 rounded-sm shrink-0" style="background:#f6a23a"></div>
+                <div class="flex flex-col gap-0.5"><span class="text-[9px] font-semibold text-gray-500">273% PROX</span><span class="text-base font-bold text-gray-700">500</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== TRAFFIC ANALYSIS: BY PROFILE TYPE ========== -->
+      <section class="analytics-section">
+        <div class="profile-type-card bg-white border border-gray-200 rounded-lg shadow-[0_1px_3px_rgba(0,0,0,0.06)] p-5 h-[320px] flex flex-col">
+          <div class="flex justify-between items-center mb-2.5">
+            <h3 class="text-base font-semibold text-gray-700">Traffic Analysis - By Profile Type</h3>
+            <div class="profile-type-stats flex flex-col items-end gap-0.5">
+              <span class="text-xs font-semibold text-[#2563eb]">Access Granted:</span>
+              <span class="text-sm font-bold text-black mr-2">2300</span>
+              <span class="text-xs font-semibold text-[#2563eb]">Unique:</span>
+              <span class="text-sm font-bold text-black mr-2">2500</span>
+            </div>
+          </div>
+          <div class="profile-type-body flex flex-1 gap-[18px] overflow-hidden">
+            <div class="profile-type-left flex-[75] flex flex-col relative h-full">
+              <canvas id="profileTypeBarChart"></canvas>
+              <div class="flex gap-5 justify-center pt-1.5">
+                <div class="flex items-center gap-1.5 text-xs font-semibold text-gray-500"><span class="w-2.5 h-2.5 rounded-sm" style="background:#b185db"></span> Employee</div>
+                <div class="flex items-center gap-1.5 text-xs font-semibold text-gray-500"><span class="w-2.5 h-2.5 rounded-sm" style="background:#f6a623"></span> Visitor</div>
+                <div class="flex items-center gap-1.5 text-xs font-semibold text-gray-500"><span class="w-2.5 h-2.5 rounded-sm" style="background:#2196f3"></span> Contractor</div>
+              </div>
+            </div>
+            <div class="profile-type-right flex-[25] flex flex-col items-center justify-center gap-3 overflow-visible">
+              <div class="pt-doughnut-wrapper w-[130px] h-[130px] relative"><canvas id="profileTypeDoughnut"></canvas></div>
+              <div class="pt-stat-cards flex gap-1.5">
+                <div class="pt-stat-card bg-[#fde8c8] w-[90px] h-[60px] p-2 rounded-md shadow-[0_1px_3px_rgba(0,0,0,0.08)] flex items-center gap-1.5">
+                  <div class="w-2 h-2 rounded-sm shrink-0" style="background:#f6a623"></div>
+                  <div class="pt-stat-card-text flex flex-col gap-0.5"><span class="text-[9px] font-semibold text-gray-500">33% Employee</span><span class="text-base font-bold text-gray-700">500</span></div>
+                </div>
+                <div class="pt-stat-card bg-[#e2ccf5] w-[90px] h-[60px] p-2 rounded-md shadow-[0_1px_3px_rgba(0,0,0,0.08)] flex items-center gap-1.5">
+                  <div class="w-2 h-2 rounded-sm shrink-0" style="background:#b185db"></div>
+                  <div class="pt-stat-card-text flex flex-col gap-0.5"><span class="text-[9px] font-semibold text-gray-500">33% Employee</span><span class="text-base font-bold text-gray-700">500</span></div>
+                </div>
+                <div class="pt-stat-card bg-[#fef08a] w-[90px] h-[60px] p-2 rounded-md shadow-[0_1px_3px_rgba(0,0,0,0.08)] flex items-center gap-1.5">
+                  <div class="w-2 h-2 rounded-sm shrink-0" style="background:#facc15"></div>
+                  <div class="pt-stat-card-text flex flex-col gap-0.5"><span class="text-[9px] font-semibold text-gray-500">33% Employee</span><span class="text-base font-bold text-gray-700">500</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="test.js"></script>
+</body>
+</html>
